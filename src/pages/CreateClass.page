@@ -1,0 +1,14 @@
+<apex:page standardController="Class__c">
+    <apex:form >
+        <apex:pageBlock title="Please enter Class information">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!save}" value="Save"/> <!-- Action binding -->
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Information" columns="3" >
+                <apex:inputField value="{!Class__c.name}"/> <!-- data binding -->
+                <apex:inputField value="{!Class__c.Class_Subject__c}"/>
+                <apex:inputField value="{!Class__c.Class_Topic__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

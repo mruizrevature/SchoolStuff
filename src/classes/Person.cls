@@ -10,6 +10,7 @@ public virtual class Person {
     // Default Constructor
     public Person() {
     	System.debug('Hello Moto!');
+        System.debug('Hello Moto!');
         name = '';
         email = '';
     }
