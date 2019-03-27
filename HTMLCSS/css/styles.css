@@ -1,0 +1,111 @@
+/* Using the id attribute */
+#info {
+    background-color: blue;
+}
+
+/* Using the class attribute */
+.infoLine {
+    background-color: chartreuse;
+}
+
+/* Using the attribute selector */
+p[mattsAttr="matt"] {
+    font-size: 30px;
+}
+
+a {
+    font-size: 30px;
+}
+
+/* Pseudo-classes
+    selector:pseudo-class {
+        property:value;
+    }
+*/
+
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: #0f0; /* #00ff00 */
+}
+
+/* mouse(hover) over link */
+a:hover {
+    color: #F0F;
+}
+
+/* selected link */
+a:active {
+    color: #00F;
+}
+
+/* first child */
+p i:first-child {
+    color: orange;
+}
+
+
+#childrenExample {
+    background-color:#F1F1F1;
+}
+
+/* CSS Combinators */
+
+/* Descendant Selector (space) */
+#childrenExample p {
+    text-decoration: underline;
+}
+
+/* Child Selector (>) */
+#childrenExample > p {
+    text-align: center;
+}
+
+/* Multiple Selectors (,) */
+.child, .cousin {
+    font-style: italic;
+}
+
+/* Box Model */
+#boxModelExample {
+    width: 300px;
+    border: 25px solid green;
+    /* padding-top: 25px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding: 25px 10px 25px 10px; */
+    padding: 25px 10px;
+    margin: 25px;
+}
+
+/* Responsive Design */
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    body {
+        background-color: #F09A9D;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    body {
+        background-color: #F5CF8E;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    body {
+        background-color: white;
+    }
+}
+
+
+
+

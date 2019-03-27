@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Use the script tag to reference js file -->
+        <script src="../js/myScript.js"></script>
+        <script>
+            function myFunction() {
+                // document refers to the entire webpage.
+                document.getElementById("demo").innerText = 'Changed';
+            }
+        </script>
+    </head>
+    <body>
+        <p id="demo">JS can change HTML content.</p>
+        <button type="button" onclick="myFunction()">Try it</button>
+        <button type="button" onclick="document.getElementById('demo').innerText = 'JS Button'">Try it</button>
+        <button type="button" onclick="myExternalFunction()">Try it</button>
+    
+        <p class="paragraphs">p1</p>
+        <p class="paragraphs">p2</p>
+        <p class="paragraphs">p3</p>
+        <button type="button" onclick="changeParagraphBackgrounds()">Change p tags</button>
+
+        <br />
+        Enter your name: <input type="text" id="fname" onchange="changeFirstName(this);">
+
+    </body>
+</html>
