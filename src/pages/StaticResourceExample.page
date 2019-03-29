@@ -1,0 +1,12 @@
+<apex:page >
+    <!-- To reference a stand-alone static resource -->
+    <div>
+        <apex:image url="{!$Resource.Batman}"/>
+        <!-- <apex:includeScript value="{!$Resource.JSFileName}"/> -->
+    </div>
+    
+    <!-- To reference a file in an archive -->
+    <div>
+        <apex:image url="{!URLFOR($Resource.Images, 'images/image1.jpg')}"/>
+    </div>
+</apex:page>

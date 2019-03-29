@@ -1,0 +1,8 @@
+<apex:page controller="MyCustomController">
+    <apex:form >
+    	<apex:pageBlock >
+        	<!-- outputField is a read-only display of a label and value for a field on a SF object. -->
+        	<apex:outputField value="{!myClass.Name}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

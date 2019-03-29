@@ -1,0 +1,21 @@
+<apex:page controller="ActionRegionDemoController">
+    <apex:form >
+        <apex:pageMessages id="errors"/>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Accounts" id="accountSection" >
+                <apex:inputField value="{!acc.Industry}" required="true" />
+                <apex:actionRegion >
+                    <apex:inputField value="{!acc.Name}">
+                        <apex:actionSupport action="{!saveAccount}"
+                                            rerender="errors,accountSection,outputRegion"
+                                            event="onchange"/>
+                    </apex:inputField>
+                </apex:actionRegion>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="outputRegion" columns="1">
+                Account Name: <apex:outputText value="{!accountName}" /> <br />
+                Industry: <apex:outputText value="{!accountIndustry}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

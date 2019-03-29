@@ -1,0 +1,21 @@
+<apex:page controller="FindMyClasses" docType="html-5.0">
+    <apex:form >
+        <apex:pageBlock title="Please select class information">
+            <apex:pageBlockSection >
+                <apex:input type="text" value="{!className}" label="Class Name: "/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!findClasses}" value="Find Class"/>
+                <apex:commandButton action="{!findEnglishClasses}" value="Find English Classes" reRender="classesSection"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock title="Classes" id="classesSection" rendered="{!classesFound}">
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!classes}" var="class">
+                    <apex:column value="{!class.Name}"/>
+                    <!-- Repeat for fields -->
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

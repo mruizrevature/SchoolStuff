@@ -1,0 +1,36 @@
+<apex:page standardController="Account" recordSetVar="accounts" extensions="PaginationExtension">
+    <apex:form >
+        <apex:pageBlock title="Pagination">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!setController.previous}" value="Previous" disabled="{!NOT(setController.hasPrevious)}"/>								
+                <apex:commandButton action="{!setController.next}" value="Next" disabled="{!NOT(setController.hasNext)}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!displayedAccounts}" var="acc">
+                <apex:column value="{!acc.Name}"/>
+                <apex:column headerValue="Type">
+                    <apex:inputField value="{!acc.Type}" />
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:dataTable value="{!displayedAccounts}" var="acc">
+                <!-- A facet consists of content in an area of a VF component that provides
+					 contextual information about the data that is presented in the component.-->
+                <apex:facet name="caption">Data Table Caption</apex:facet>
+                <apex:facet name="header">Data Table Header</apex:facet>
+                <apex:facet name="footer">Data Table Footer</apex:facet>
+                
+                <apex:column >
+                    <apex:facet name="header">Name</apex:facet>
+                    <apex:outputText value="{!acc.Name}" />
+                </apex:column>
+                <apex:column headerValue="Type">
+                    <apex:facet name="header">Type</apex:facet>
+                    <apex:outputText value="{!acc.Type}" />
+                </apex:column>
+            </apex:dataTable>
+            
+            <apex:repeat value="{!displayedAccounts}" var="acc">
+                Billing Street: <apex:outputText value="{!acc.BillingStreet}"/> <br />
+            </apex:repeat>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
