@@ -1,0 +1,20 @@
+This document assumes:
+	1) You have Eclipse installed.
+	2) You have downloaded and installed the Force.com IDE plugin.
+	3) You have already created a Force.com project that is linked to your org.
+	
+If you have not completed all of the steps above, please visit: https://developer.salesforce.com/docs/atlas.en-us.eclipse.meta/eclipse/ide_install.htm before continuing.
+
+
+1) Right click the project/folder/file you wish to synchronize with the server (your org).
+2) Hover over Force.com and select "Synchronize with Server"
+3) Once your selection appears underneath the workspace tab (bottom or side panel), right click.
+4) At this step, you have two decisions:
+	- If you want to apply your local (those in Eclipse) changes to the server (your org), select "Apply Project to Server",
+	- If you want your server changes to be applied to your local copy, select "Apply Server to Project"
+	
+
+
+****If your eclipse Force.com Project is connected to a Git repo, Eclipse does not enforce version for you. When synchronizing your project with the server, regardless of direction, you should double check to be certain that you will not lose files/changes in which you intended to keep. Either back it up within your Git repository or elsewhere.
+
+
