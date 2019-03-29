@@ -9,6 +9,13 @@
                 document.getElementById("demo").innerText = 'Changed';
             }
         </script>
+
+        <style>
+            .eventProp * {
+                margin: 10px;
+                border: 1px solid blue;
+            }
+        </style>
     </head>
     <body>
         <p id="demo">JS can change HTML content.</p>
@@ -24,5 +31,34 @@
         <br />
         Enter your name: <input type="text" id="fname" onchange="changeFirstName(this);">
 
+        <!-- Event Propogation -->
+        <!-- Bubbling - Default -->
+        <div class="eventProp">
+            <form onclick="alert('form')">FORM
+                <div onclick="alert('div')">DIV
+                    <p onclick="alert('p')">P</p>
+                    <p onclick="event.stopPropagation()">Stop Propogation</p>
+                </div>
+            </form>
+        </div>
+        <!-- Capturing -->
+        <div class="eventProp">
+            <form>FORM
+                <div>DIV
+                    <p>P</p>
+                </div>
+            </form>
+        </div>
+        <script>
+            for(let elem of document.querySelectorAll('*')) {
+                // first parameter is the event you want to listen for
+                // second param is the function to exeucte when handling
+                // third param is whether or not to use capturing.
+                elem.addEventListener("click",
+                    function() {
+                        alert(`Capturing: ${elem.tagName}`);
+                    }, true);
+            }
+        </script>
     </body>
 </html>
