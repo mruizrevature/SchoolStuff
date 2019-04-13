@@ -1,0 +1,28 @@
+<aura:component controller="CalloutApexClass">
+    <aura:attribute name="listOfPossibleConditions" type="Object" />
+    
+    <aura:attribute name="age" type="Integer" />
+    <aura:attribute name="sex" type="String" />
+    
+    <lightning:card title="Diagnosis Machine">
+        <form class="slds-form--stacked">
+            <lightning:input type="number" name="age" 
+                             value="{!v.age}" label="Enter your age." required="true"/> 
+            <lightning:select label="Please specify your gender." required="true" value="{!v.sex}">
+                <option value="">choose one...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </lightning:select>
+            <lightning:input aura:id="symptomform" type="checkbox" label="Cough" value="s_102"/>
+            <lightning:input aura:id="symptomform" type="checkbox" label="Diarrhea" value="s_8"/>
+            <lightning:input aura:id="symptomform" type="checkbox" label="Fever" value="s_98"/>
+            <lightning:input aura:id="symptomform" type="checkbox" label="Chills" value="s_81"/>
+            <lightning:button variant="brand" label="Submit" title="Submit" onclick="{!c.handleClick}" />
+        </form>
+    </lightning:card>
+    
+    <aura:iteration items="{!v.listOfPossibleConditions}" var="item">
+        {!item.Name} &nbsp; {!item.Probability}
+    </aura:iteration>
+</aura:component>
