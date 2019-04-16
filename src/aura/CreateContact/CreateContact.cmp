@@ -1,0 +1,35 @@
+<aura:component controller="CreateContactController">
+    <aura:attribute name="accountId" type="ID" />
+    <aura:attribute name="newContact" type="Contact" default="{ 'sobjectType' : 'Contact' }" />
+    <aura:attribute name="recordId" type="ID" />
+    
+    <lightning:card iconName="standard:contact" title="Create Contact">
+        <div class="slds-form--stacked">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label">First Name: </label>
+                <div class="slds-form-element__control">
+                    <ui:inputText class="slds-input"
+                                  value="{!v.newContact.FirstName}" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label">Last Name: </label>
+                <div class="slds-form-element__control">
+                    <ui:inputText class="slds-input"
+                                  value="{!v.newContact.LastName}"
+                                  required="true" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+                        <lightning:input type="tel" label="Mobile Phone"
+                                         placeholder="000-000-0000"/>
+            </div>
+            <br />
+            <div class="slds-form-element">
+                <lightning:button variant="brand"
+                                  label="Save Contact"
+                                  onclick="{!c.saveContact}" />
+            </div>
+        </div>
+    </lightning:card>
+</aura:component>

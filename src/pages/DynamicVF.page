@@ -1,0 +1,3 @@
+<apex:page standardController="Contact" extensions="DynamicComponentExample">
+    <apex:dynamicComponent componentValue="{!headerWithDueDateCheck}" />
+</apex:page>

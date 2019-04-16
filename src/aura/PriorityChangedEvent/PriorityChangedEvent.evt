@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Case has changed" >
+    <aura:attribute name="priority" type="String" />
+</aura:event>

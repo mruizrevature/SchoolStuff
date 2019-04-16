@@ -1,0 +1,7 @@
+<apex:page standardController="Account" extensions="MyController">
+    <apex:messages />
+    
+    <apex:form >
+    	<apex:commandButton action="{!message}" value="Add Message"/>
+    </apex:form>
+</apex:page>

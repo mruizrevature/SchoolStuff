@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <c:CreateContact accountId="{!v.recordId}"/>
+    <c:CreateOpportunity accountId="{!v.recordId}"/>
+</aura:component>

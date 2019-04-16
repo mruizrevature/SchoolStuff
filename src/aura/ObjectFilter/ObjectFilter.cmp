@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="GetObjectsApexController">
+    <aura:attribute name="typeOfObjectToList" type="String" />
+    <aura:attribute name="options" type="List" />
+    <aura:attribute name="selectedObject" type="ID" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:registerEvent name="objectWasAdded" type="c:ObjectAddedEvent" />
+    
+    <div class="slds-grid slds-grid_align-center">
+        <div class="slds-col slds-size_5-of-6">
+            <div class="slds-align-middle">
+            <lightning:select name="objectId" label="" aura:id="objectId" value="{!v.selectedObject}">
+                <aura:iteration items="{!v.options}" var="option">
+                    <option text="{!option.Id}" value="{!option.Id}" />
+                </aura:iteration>
+            </lightning:select>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-6 slds-align-middle">
+            <div class="slds-grid slds-grid_align-center">
+                <lightning:button label="Add" variant="brand" onclick="{!c.addObject}" /> 
+            </div>
+        </div>
+    </div>
+</aura:component>

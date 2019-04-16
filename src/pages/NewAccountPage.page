@@ -1,4 +1,5 @@
 <apex:page standardController="Account" extensions="NewAccountExtension">
+    
     <apex:pageMessages />
     <apex:form >
     	<apex:pageBlock > 

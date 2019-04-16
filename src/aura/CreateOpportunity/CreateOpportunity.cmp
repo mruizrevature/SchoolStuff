@@ -1,0 +1,36 @@
+<aura:component controller="CreateOpportunityController">
+    <aura:attribute name="stages" type="String[]" default="--None--, Prospecting, Qualification, Needs Analysis"/>
+    <aura:attribute name="accountId" type="ID" />
+    <aura:attribute name="newOpportunity" type="Opportunity" default="{ 'sobjectType' : 'Opportunity' }" />
+    <aura:attribute name="recordId" type="ID" />
+    
+    <lightning:card iconName="standard:opportunity" title="Create Opportunity">
+        <div class="slds-form--stacked">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label">Opportunity Name: </label>
+                <div class="slds-form-element__control">
+                    <ui:inputText class="slds-input"
+                                  value="{!v.newOpportunity.Name}" 
+                                  required="true"/>
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <lightning:select name="select" label="Select a Stage" value="{!v.newOpportunity.StageName}" required="true">
+                    <aura:iteration items="{!v.stages}" var="stage">
+                        <option text="{!stage}"></option>
+                    </aura:iteration>
+                </lightning:select>
+                
+            </div>
+            <div class="slds-form-element">
+                        <lightning:input type="date" value="{!v.newOpportunity.CloseDate}" label="Enter a date" />
+            </div>
+            <br />
+            <div class="slds-form-element">
+                <lightning:button variant="brand"
+                                  label="Save Contact"
+                                  onclick="{!c.saveOpportunity}" />
+            </div>
+        </div>
+    </lightning:card>
+</aura:component>

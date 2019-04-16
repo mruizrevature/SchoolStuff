@@ -1,0 +1,18 @@
+<aura:component controller="BigAppController">
+    <aura:attribute name="typeOfSObjectToList" type="Object"/>
+    <aura:attribute name="data" type="Object" />
+    <aura:attribute name="columns" type="List" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:ObjectAddedEvent" action="{!c.addObjectToTable}" />
+	
+    <lightning:datatable
+                         keyField="id"
+                         data="{!v.data}"
+                         columns="{!v.columns}"
+                         hideCheckboxColumn="true"
+                         />
+    
+    <ui:outputText title="data" value="{!v.columns}" />
+
+</aura:component>
